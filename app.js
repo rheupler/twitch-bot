@@ -9,11 +9,19 @@ var options = {
     reconnect: true
   },
   identity: {
-    username: 'sadsheepbot',
-    password: 'oauth:hf4fj1jogm6eoctnr7am55hjmm746n'
+    username: 'sadsheeepbot',
+    password: 'oauth:akvqj9fwwsmtep9ihaopdr32nobl0a'
   },
-  channels: ['sadsheeep']
+  channels: ['king_o_town']
 };
 
-var client = new tmi.clent(options)
+var client = new tmi.client(options);
 client.connect();
+
+client.on('chat', function(channel, user, message, self) {
+  client.action('king_o_town', user['display-name'] + " don't say that")
+})
+
+client.on('connected', function(address, port) {
+  client.action("king_o_town", "King o Town is a noob");
+});
