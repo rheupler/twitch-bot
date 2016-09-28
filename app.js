@@ -12,7 +12,7 @@ var options = {
     username: 'sadsheeepbot',
     password: 'oauth:akvqj9fwwsmtep9ihaopdr32nobl0a'
   },
-  channels: ['king_o_town']
+  channels: ['']
 };
 
 var client = new tmi.client(options);
@@ -20,8 +20,8 @@ client.connect();
 
 client.on('chat', function(channel, user, message, self) {
   // client.action('king_o_town', user['display-name'] + " don't say that");
-  if(message === '!sadsheeepbot') {
-    client.action('king_o_town', "Hello")
+  if(message.includes('sadsheeepbot')) {
+    client.action('', "Hello, " + user['display-name'])
   }
 });
 

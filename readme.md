@@ -6,6 +6,7 @@
 2. `cd` into new directory
 3. `npm install` to install dependencies
 4. `node app.js` to start
+5. Include the channel name that you want the bot to be active in.
 
 ## Legal
 
